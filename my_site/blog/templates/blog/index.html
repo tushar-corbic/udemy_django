@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static%}
+
+{%block css_files%}
+<link rel="stylesheet" href="{% static "blog/post.css"%}">
+<link rel="stylesheet" href="{% static "blog/index.css"%}">
+{%endblock%}
+{%block title%}
+
+{%endblock%}
+{%block content%}
+    
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/tushar.png"%}" alt="Tushar-author of this blog">
+            <h2>Tushar-corbic's Blog</h2>
+        </header>
+        <p>Hiii, I am Tushar and I love to blog about the tech and the world</p>
+    </section>
+    <section id = "latest-posts">
+        <h2>My latest Thoughts</h2>
+        <ul>
+            {% for post  in posts %}
+            {% include "blog/include/post.html"%}
+            {% endfor %}
+        </ul>
+    </section>
+    <section id = "about">
+        <h2>What I do</h2>
+        <p>I love Programming and to help others and love to explore new technologis in general!</p>
+        <p>My goal is to keep growing as a developer and and if I could help you do the same , then I'd be happy </p>
+    </section>
+
+{%endblock%}
